@@ -1,0 +1,8 @@
+{
+  "aligned": false,
+  "track_times": "IBTrACS 3-hourly interpolated / typically 6-hourly reports",
+  "era5": "not downloaded \u2014 target 6-hourly, 0.25\u00b0, NIO crop, bilinear to storm-centered 64x64",
+  "insat": "not downloaded \u2014 nearest hour mosaic, reproject to same storm-centered grid",
+  "ocean": "not downloaded \u2014 OISST daily interpolated to 6-hourly track times",
+  "note": "Do not train neural models until this report is aligned=true."
+}

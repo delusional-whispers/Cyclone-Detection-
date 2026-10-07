@@ -1,0 +1,46 @@
+# Model zoo for a student/research prototype.
+# Neural nets are implemented but default weights are untrained.
+
+selected_architecture: climatology_ensemble
+rationale: >
+  IBTrACS NI tracks are available immediately (~28 MB). ERA5/INSAT volumes
+  and GPU memory required for a FourCastNet/Pangu-scale model are not
+  realistic for this prototype. A CLIPER-style climatology + persistence
+  ensemble can be evaluated honestly on held-out Indian cyclones. ConvLSTM
+  and a compact spatiotemporal transformer are provided for later training
+  on storm-centered patches once ERA5 crops exist.
+
+models:
+  persistence:
+    trained: true
+    type: statistical
+    description: Constant heading and speed from the last 6-hour displacement.
+  climatology_steering:
+    trained: true
+    type: statistical
+    description: Persistence blended with basin-month motion climatology (CLIPER-inspired).
+  indian_analog_ensemble:
+    trained: true
+    type: statistical
+    description: Motion/intensity analogs from same month and sub-basin, plus Gaussian perturbations.
+  convlstm_baseline:
+    trained: false
+    type: neural
+    params_m: 1.8
+    input: storm-centered 64x64 patches, 4 frames, 8 channels
+    note: Model not trained yet.
+  spatiotemporal_transformer:
+    trained: false
+    type: neural
+    params_m: 4.2
+    input: 8x8 patches, 8 frames, ViT encoder + temporal attention
+    note: Model not trained yet.
+
+compute_budget:
+  prototype_gpu_vram_gb: 8
+  recommended_patch_deg: 20
+  recommended_grid: 64
+  mixed_precision: true
+  gradient_checkpointing: true
+  batch_size: 8
+  accumulation: 4

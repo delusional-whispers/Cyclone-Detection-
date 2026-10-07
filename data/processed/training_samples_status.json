@@ -1,0 +1,29 @@
+{
+  "generated": false,
+  "reason": "ERA5/INSAT cubes are not present. Refusing to synthesize fake atmospheric fields as training labels.",
+  "planned_sample": {
+    "grid": "64x64",
+    "patch_deg": 20,
+    "frames": 8,
+    "dt_hours": 6,
+    "channels": [
+      "u10",
+      "v10",
+      "mslp",
+      "t850",
+      "z500",
+      "rh700",
+      "sst",
+      "ir_bt"
+    ],
+    "targets": [
+      "dlat",
+      "dlon",
+      "dwind",
+      "dpres",
+      "imd_class",
+      "ri_flag"
+    ],
+    "split": "cyclone-level chronological"
+  }
+}

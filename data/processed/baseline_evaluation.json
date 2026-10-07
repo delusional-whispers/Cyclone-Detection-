@@ -1,0 +1,130 @@
+{
+  "status": "ok",
+  "dataset": "Indian Cyclone Dataset from IBTrACS NI",
+  "models": [
+    {
+      "model": "persistence",
+      "split": "test",
+      "n_storms": 65,
+      "n_forecasts": 65,
+      "track_error_km": {
+        "6": {
+          "mean": 33.5,
+          "median": 29.5,
+          "n": 65
+        },
+        "12": {
+          "mean": 72.7,
+          "median": 62.5,
+          "n": 65
+        },
+        "24": {
+          "mean": 167.9,
+          "median": 152.5,
+          "n": 63
+        },
+        "48": {
+          "mean": 407.7,
+          "median": 386.5,
+          "n": 46
+        },
+        "72": {
+          "mean": 709.6,
+          "median": 689.8,
+          "n": 33
+        },
+        "96": {
+          "mean": 985.2,
+          "median": 933.1,
+          "n": 26
+        },
+        "120": {
+          "mean": 1266.4,
+          "median": 1094.4,
+          "n": 17
+        }
+      },
+      "intensity_wind_kt": {
+        "mae": 9.163311688311689,
+        "rmse": 15.790043920552819,
+        "r2": 0.06201864881346342,
+        "n": 308
+      },
+      "intensity_pres_hpa": {
+        "mae": 15.493811074918568,
+        "rmse": 24.24852995980842,
+        "r2": -4.71826396376968,
+        "n": 307
+      },
+      "neural_models_trained": false,
+      "disclaimer": "Statistical baseline only. These are not neural WeatherNext-style scores."
+    },
+    {
+      "model": "indian_analog_ensemble",
+      "split": "test",
+      "n_storms": 65,
+      "n_forecasts": 65,
+      "track_error_km": {
+        "6": {
+          "mean": 39.3,
+          "median": 35.4,
+          "n": 65
+        },
+        "12": {
+          "mean": 81.1,
+          "median": 68.7,
+          "n": 65
+        },
+        "24": {
+          "mean": 174.3,
+          "median": 154.3,
+          "n": 63
+        },
+        "48": {
+          "mean": 427.1,
+          "median": 378.0,
+          "n": 46
+        },
+        "72": {
+          "mean": 731.5,
+          "median": 595.2,
+          "n": 33
+        },
+        "96": {
+          "mean": 1019.7,
+          "median": 1010.6,
+          "n": 26
+        },
+        "120": {
+          "mean": 1320.6,
+          "median": 1163.0,
+          "n": 17
+        }
+      },
+      "intensity_wind_kt": {
+        "mae": 9.293181818181818,
+        "rmse": 15.895642831888273,
+        "r2": 0.049430841303216067,
+        "n": 308
+      },
+      "intensity_pres_hpa": {
+        "mae": 15.600325732899021,
+        "rmse": 24.612227172370336,
+        "r2": -4.891083777974746,
+        "n": 307
+      },
+      "neural_models_trained": false,
+      "disclaimer": "Statistical baseline only. These are not neural WeatherNext-style scores."
+    }
+  ],
+  "untrained": [
+    {
+      "id": "convlstm_baseline",
+      "note": "Model not trained yet."
+    },
+    {
+      "id": "spatiotemporal_transformer",
+      "note": "Model not trained yet."
+    }
+  ]
+}

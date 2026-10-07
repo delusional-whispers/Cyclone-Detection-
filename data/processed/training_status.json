@@ -1,0 +1,6 @@
+{
+  "status": "skipped",
+  "arch": "convlstm",
+  "reason": "Model not trained yet. Storm-centered ERA5/INSAT patches are not present.",
+  "next": "Run scripts/download_data.py (CDS credentials) then scripts/generate_training_samples.py"
+}

@@ -1,0 +1,24 @@
+{
+  "dataset": "Indian Cyclone Dataset",
+  "source": "IBTrACS v04r01 NI basin, cropped to 0-30N, 50-110E",
+  "doi": "10.25921/82ty-9e16",
+  "license": "IBTrACS may be redistributed and used without restriction; cite NOAA/NCEI.",
+  "n_storms": 464,
+  "n_points": 16285,
+  "splits": {
+    "train": 351,
+    "valid": 38,
+    "test": 75
+  },
+  "domain": {
+    "lat": [
+      0,
+      30
+    ],
+    "lon": [
+      50,
+      110
+    ]
+  },
+  "neural_models_trained": false
+}

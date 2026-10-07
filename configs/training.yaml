@@ -1,0 +1,20 @@
+seed: 42
+precision: fp16
+epochs: 40
+batch_size: 8
+learning_rate: 3.0e-4
+weight_decay: 1.0e-4
+grad_clip: 1.0
+accumulation_steps: 4
+num_workers: 4
+log_dir: data/processed/experiments
+scheduler: cosine
+early_stopping_patience: 8
+loss:
+  track: haversine_km
+  wind: huber
+  pressure: huber
+  class: focal
+notes: >
+  Do not run full training until ERA5/INSAT patches are downloaded with CDS/MOSDAC
+  credentials. Statistical baselines do not use this file.

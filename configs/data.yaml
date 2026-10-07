@@ -1,0 +1,70 @@
+# Indian Cyclone AI — domain and dataset configuration
+# Coordinates follow WGS84. Units: degrees, hours, knots, hPa.
+
+domain:
+  name: north_indian_ocean
+  lat_min: 0.0
+  lat_max: 30.0
+  lon_min: 50.0
+  lon_max: 110.0
+  description: Arabian Sea, Bay of Bengal, and North Indian Ocean focus box
+
+regions:
+  - Arabian Sea
+  - Bay of Bengal
+  - North Indian Ocean
+  - Indian Ocean
+  - India
+  - Sri Lanka
+  - Bangladesh
+  - Myanmar
+  - Pakistan
+  - Maldives
+  - Oman
+  - Andaman and Nicobar Islands
+  - Lakshadweep
+
+basins:
+  BB:
+    name: Bay of Bengal
+    lon_min: 80.0
+    lon_max: 100.0
+  AS:
+    name: Arabian Sea
+    lon_min: 50.0
+    lon_max: 80.0
+  NI:
+    name: North Indian Ocean
+    lon_min: 50.0
+    lon_max: 110.0
+
+ibtracs:
+  version: v04r01
+  basin_file: ibtracs.NI.list.v04r01.csv
+  url: https://www.ncei.noaa.gov/data/international-best-track-archive-for-climate-stewardship-ibtracs/v04r01/access/csv/ibtracs.NI.list.v04r01.csv
+  license: Redistributable without restriction (NOAA/NCEI IBTrACS)
+  preferred_wind: NEWDELHI_WIND
+  fallback_wind: [WMO_WIND, USA_WIND]
+  preferred_pres: NEWDELHI_PRES
+  fallback_pres: [WMO_PRES, USA_PRES]
+  satellite_era_start: 1980
+
+splits:
+  method: cyclone_level_chronological
+  train_end_season: 2016
+  valid_end_season: 2019
+  test_start_season: 2020
+  min_points: 4
+
+forecast:
+  lead_hours: [6, 12, 24, 48, 72, 96, 120]
+  ensemble_size: 21
+  time_step_hours: 6
+
+grid:
+  lat_step: 1.0
+  lon_step: 1.0
+  visualization_only: true
+  note: >
+    Default weather layers are parametric/climatological visualization fields
+    centered on the selected storm. They are not ERA5 or satellite observations.
